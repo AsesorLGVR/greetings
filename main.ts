@@ -1,5 +1,19 @@
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile1, function (sprite, location) {
-    if (game.askForString("a", 2) == "aa") {
+    if (game.askForString("Buenos días", 11) == "buenos dias") {
+        if (game.askForString("¿qué tal?", 9) == "bien y tu") {
+            tiles.placeOnTile(mySprite, tiles.getTileLocation(7, 6))
+            if (game.askForString("muy bien, venga, hasta luego", 5) == "adios") {
+                tiles.placeOnTile(mySprite, tiles.getTileLocation(7, 6))
+            } else {
+                game.splash("La respuesta es <<adios>>")
+                tiles.placeOnTile(mySprite, tiles.getTileLocation(7, 6))
+            }
+        } else {
+            game.splash("La respuesta es <<bien y tu>>")
+            tiles.placeOnTile(mySprite, tiles.getTileLocation(7, 6))
+        }
+    } else {
+        game.splash("La respuesta es Buenos dias")
         tiles.placeOnTile(mySprite, tiles.getTileLocation(7, 6))
     }
 })
