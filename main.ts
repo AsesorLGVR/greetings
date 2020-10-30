@@ -8,6 +8,12 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile3, function (sprite, location
     game.showLongText("Hola means hello and its often used together with one of the phrases above, e.g. hola , buenos días, adios", DialogLayout.Bottom)
     tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 12))
 })
+scene.onOverlapTile(SpriteKind.Player, sprites.builtin.forestTiles10, function (sprite, location) {
+    if (true) {
+        mySprite.destroy(effects.clouds, 500)
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(9, 15))
+    }
+})
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.darkGroundCenter, function (sprite, location) {
     if (true) {
         tiles.placeOnTile(mySprite, tiles.getTileLocation(9, 15))
