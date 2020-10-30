@@ -1,3 +1,36 @@
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location) {
+    game.setDialogFrame(sprites.builtin.computer0)
+    game.showLongText("Buenos días means good morning and is used up to linchtime. After that , until around 9pm or nightfall, its buenas tardes", DialogLayout.Bottom)
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(7, 12))
+})
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile3, function (sprite, location) {
+    game.setDialogFrame(sprites.builtin.computer0)
+    game.showLongText("Hola means hello and its often used together with one of the phrases above, e.g. hola , buenos días, adios", DialogLayout.Bottom)
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 12))
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.castle.tileDarkGrass3, function (sprite, location) {
+    if (true) {
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(8, 15))
+        tiles.setTilemap(tiles.createTilemap(hex`1000100003030303030304040404030303030303030303030303040404040303030303030101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010505050505010101010101010101010105050205050101010101`, img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, [myTiles.transparency16,sprites.dungeon.hazardLava1,sprites.dungeon.buttonOrange,sprites.dungeon.hazardWater,sprites.dungeon.buttonTealDepressed,sprites.dungeon.hazardLava0], TileScale.Sixteen))
+    }
+})
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile1, function (sprite, location) {
     if (game.askForString("Buenos días", 11) == "buenos dias") {
         if (game.askForString("¿qué tal?", 9) == "bien y tu") {
@@ -18,6 +51,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile1, function (sprite, location
     }
 })
 let mySprite: Sprite = null
+tiles.setTilemap(tilemap`level`)
 mySprite = sprites.create(img`
     . . . . . . f f f f . . . . . . 
     . . . . f f f 2 2 f f f . . . . 
@@ -38,4 +72,3 @@ mySprite = sprites.create(img`
     `, SpriteKind.Player)
 controller.moveSprite(mySprite)
 scene.cameraFollowSprite(mySprite)
-tiles.setTilemap(tilemap`level`)
