@@ -8,10 +8,16 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile3, function (sprite, location
     game.showLongText("Hola means hello and its often used together with one of the phrases above, e.g. hola , buenos días, adios", DialogLayout.Bottom)
     tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 12))
 })
-scene.onOverlapTile(SpriteKind.Player, sprites.castle.tileDarkGrass3, function (sprite, location) {
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.darkGroundCenter, function (sprite, location) {
+    if (true) {
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(9, 15))
+        tiles.setTilemap(tilemap`level`)
+    }
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.castle.tilePath5, function (sprite, location) {
     if (true) {
         tiles.placeOnTile(mySprite, tiles.getTileLocation(8, 15))
-        tiles.setTilemap(tiles.createTilemap(hex`1000100003030303030304040404030303030303030303030303040404040303030303030101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010505050505010101010101010101010105050205050101010101`, img`
+        tiles.setTilemap(tiles.createTilemap(hex`1000100003030303030304040404030303030303030303030303040404040303030303030101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010601010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010505050505010101010101010101010105050205050101010101`, img`
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
@@ -28,7 +34,53 @@ scene.onOverlapTile(SpriteKind.Player, sprites.castle.tileDarkGrass3, function (
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
             . . . . . . . . . . . . . . . . 
-            `, [myTiles.transparency16,sprites.dungeon.hazardLava1,sprites.dungeon.buttonOrange,sprites.dungeon.hazardWater,sprites.dungeon.buttonTealDepressed,sprites.dungeon.hazardLava0], TileScale.Sixteen))
+            `, [myTiles.transparency16,sprites.dungeon.hazardLava1,sprites.dungeon.buttonOrange,sprites.dungeon.hazardWater,sprites.dungeon.buttonTealDepressed,sprites.dungeon.hazardLava0,sprites.builtin.coral0], TileScale.Sixteen))
+    }
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.builtin.coral0, function (sprite, location) {
+    if (true) {
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 8))
+        tiles.setTilemap(tiles.createTilemap(hex`1000100003030303030304040404030303030303030303030303040404040303030303030101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010601010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010505050505010101010101010101010105050205050101010101`, img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, [myTiles.transparency16,sprites.dungeon.hazardLava1,sprites.dungeon.buttonOrange,sprites.dungeon.hazardWater,sprites.dungeon.buttonTealDepressed,sprites.dungeon.hazardLava0,sprites.builtin.coral0], TileScale.Sixteen))
+    }
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.builtin.coral1, function (sprite, location) {
+    if (true) {
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(9, 15))
+        tiles.setTilemap(tiles.createTilemap(hex`1000100001010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010201010101010101`, img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, [myTiles.transparency16,sprites.builtin.forestTiles10,sprites.dungeon.darkGroundCenter], TileScale.Sixteen))
     }
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile1, function (sprite, location) {
