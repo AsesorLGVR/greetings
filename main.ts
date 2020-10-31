@@ -10,14 +10,19 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location
         tiles.setWallAt(location, true)
     }
 })
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile4, function (sprite, location) {
+    info.changeLifeBy(1)
+    tiles.setTileAt(location, sprites.dungeon.darkGroundCenter)
+    game.showLongText("Ya tienes tu pasaporte. Ahora puedes ir a la aduana", DialogLayout.Bottom)
+    music.baDing.play()
+})
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.greenSwitchUp, function (sprite, location) {
     if (true) {
         tiles.setTileAt(location, sprites.dungeon.greenSwitchDown)
         music.baDing.play()
         game.splash("LA curiosidad mató al gato y ahora te va a matar a ti. Has liberado un luince ibérico que te está buscando")
-        tiles.setWallAt(tiles.getTileLocation(1, 19), false)
-    } else {
-        tiles.setWallAt(tiles.getTileLocation(1, 19), true)
+        tiles.setWallAt(tiles.getTileLocation(3, 19), false)
+        tiles.setTileAt(tiles.getTileLocation(3, 19), sprites.dungeon.doorOpenWest)
     }
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile15, function (sprite, location) {
@@ -45,7 +50,6 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile12, function (sprite, locatio
         game.setDialogFrame(sprites.builtin.computer0)
         game.showLongText("Aquí es la oficina de Visas tiene que ir a la de pasaportes. Adiós! SIGUIENTE!", DialogLayout.Bottom)
         tiles.placeOnTile(mySprite, tiles.getTileLocation(12, 15))
-        tiles.setWallAt(tiles.getTileLocation(12, 16), true)
     }
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.castle.tilePath5, function (sprite, location) {
@@ -91,6 +95,11 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile1, function (sprite, location
         tiles.placeOnTile(mySprite, tiles.getTileLocation(7, 6))
     }
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    mySprite.destroy(effects.disintegrate, 500)
+    music.wawawawaa.play()
+    game.over(false)
+})
 let mySprite: Sprite = null
 tiles.setTilemap(tilemap`level`)
 mySprite = sprites.create(img`
@@ -129,5 +138,5 @@ let mySprite2 = sprites.create(img`
     . f d f f f d f f d f . . . 
     . f f . . f f . . f f . . . 
     `, SpriteKind.Enemy)
-mySprite2.follow(mySprite, 100)
+mySprite2.follow(mySprite, 200)
 tiles.placeOnTile(mySprite2, tiles.getTileLocation(1, 19))
