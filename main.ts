@@ -105,6 +105,13 @@ scene.onOverlapTile(SpriteKind.Player, sprites.builtin.coral0, function (sprite,
         tiles.setTilemap(tilemap`level_2`)
     }
 })
+scene.onOverlapTile(SpriteKind.Player, sprites.castle.tileGrass1, function (sprite, location) {
+    tiles.setTileAt(tiles.getTileLocation(48, 6), sprites.builtin.coin1)
+    tiles.setTileAt(tiles.getTileLocation(36, 16), sprites.builtin.coin1)
+    tiles.setTileAt(tiles.getTileLocation(24, 9), sprites.builtin.coin1)
+    tiles.setTileAt(tiles.getTileLocation(30, 8), sprites.builtin.coin1)
+    tiles.setTileAt(tiles.getTileLocation(24, 15), sprites.builtin.coin1)
+})
 // Conversación final
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile1, function (sprite, location) {
     if (game.askForString("Buenos días", 11) == "buenos dias") {
