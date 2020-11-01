@@ -44,6 +44,56 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile3, function (sprite, location
         tiles.placeOnTile(mySprite, tiles.getTileLocation(45, 18))
     }
 })
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile22, function (sprite, location) {
+    if (true) {
+        game.setDialogFrame(img`
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            `)
+        game.showLongText("He nacido con una paz debajo del brazo\" means to be born with a silver spoon in one'mouth.", DialogLayout.Bottom)
+        music.baDing.play()
+        tiles.setTileAt(location, sprites.castle.tileGrass1)
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(25, 15))
+    }
+})
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile23, function (sprite, location) {
+    if (true) {
+        game.setDialogFrame(img`
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            `)
+        game.showLongText("He nacido con una paz debajo del brazo\" means to be born with a silver spoon in one'mouth.", DialogLayout.Bottom)
+        music.baDing.play()
+        tiles.setTileAt(location, sprites.castle.tileGrass1)
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(36, 18))
+    }
+})
 // Enemigo
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.greenSwitchUp, function (sprite, location) {
     if (true) {
@@ -80,6 +130,30 @@ scene.onOverlapTile(SpriteKind.Player, sprites.builtin.villager4WalkBack1, funct
         tiles.placeOnTile(mySprite, tiles.getTileLocation(45, 18))
     }
 })
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile19, function (sprite, location) {
+    if (true) {
+        game.setDialogFrame(img`
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            `)
+        game.showLongText("He nacido con una paz debajo del brazo\" means to be born with a silver spoon in one'mouth.", DialogLayout.Bottom)
+        music.baDing.play()
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(47, 6))
+    }
+})
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile9, function (sprite, location) {
     info.changeLifeBy(1)
     tiles.setTileAt(location, sprites.dungeon.floorDark2)
@@ -98,6 +172,30 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile12, function (sprite, locatio
         tiles.setWallAt(tiles.getTileLocation(12, 16), true)
     }
 })
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile21, function (sprite, location) {
+    if (true) {
+        game.setDialogFrame(img`
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            `)
+        game.showLongText("He nacido con una paz debajo del brazo\" means to be born with a silver spoon in one'mouth.", DialogLayout.Bottom)
+        music.baDing.play()
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(30, 9))
+    }
+})
 // Misión terminada
 scene.onOverlapTile(SpriteKind.Player, sprites.builtin.coral0, function (sprite, location) {
     if (true) {
@@ -105,12 +203,29 @@ scene.onOverlapTile(SpriteKind.Player, sprites.builtin.coral0, function (sprite,
         tiles.setTilemap(tilemap`level_2`)
     }
 })
-scene.onOverlapTile(SpriteKind.Player, sprites.castle.tileGrass1, function (sprite, location) {
-    tiles.setTileAt(tiles.getTileLocation(48, 6), sprites.builtin.coin1)
-    tiles.setTileAt(tiles.getTileLocation(36, 16), sprites.builtin.coin1)
-    tiles.setTileAt(tiles.getTileLocation(24, 9), sprites.builtin.coin1)
-    tiles.setTileAt(tiles.getTileLocation(30, 8), sprites.builtin.coin1)
-    tiles.setTileAt(tiles.getTileLocation(24, 15), sprites.builtin.coin1)
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile20, function (sprite, location) {
+    if (true) {
+        game.setDialogFrame(img`
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . 
+            `)
+        game.showLongText("He nacido con una paz debajo del brazo\" means to be born with a silver spoon in one'mouth.", DialogLayout.Bottom)
+        music.baDing.play()
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(26, 3))
+    }
 })
 // Conversación final
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile1, function (sprite, location) {
