@@ -3,7 +3,8 @@
     "description": "",
     "dependencies": {
         "device": "*",
-        "storyboard": "*"
+        "storyboard": "*",
+        "animation": "*"
     },
     "files": [
         "main.blocks",

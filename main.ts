@@ -203,6 +203,31 @@ scene.onOverlapTile(SpriteKind.Player, sprites.builtin.coral0, function (sprite,
         tiles.setTilemap(tilemap`level_2`)
     }
 })
+controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
+    animation.runImageAnimation(
+    mySprite,
+    [img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . f f f f f f . . . . . 
+        . . . . f e e e e e e f . . . . 
+        . . . f e e e e e e e e f . . . 
+        . . . f e e f f f f e e f . . . 
+        . . . f e f f d d f f e f . . . 
+        . . f e f d e d d e d f e f . . 
+        . . f e f d d d d d d f e f . . 
+        . . f e e f d 3 3 d f e e f . . 
+        . f e e f 9 f f f f 9 f e e f . 
+        . . f f d 9 9 9 9 9 9 d f f . . 
+        . . f d d f 9 9 9 9 f d d f . . 
+        . . . f f 9 9 9 9 9 9 f f . . . 
+        . . . f 9 9 9 9 9 9 9 9 f . . . 
+        . . . f f f f f f f f f f . . . 
+        . . . . 9 f f . . f f 9 . . . . 
+        `],
+    500,
+    false
+    )
+})
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile20, function (sprite, location) {
     if (true) {
         game.setDialogFrame(img`
@@ -252,22 +277,22 @@ tiles.setTilemap(tilemap`level`)
 info.setLife(3)
 info.setScore(0)
 mySprite = sprites.create(img`
-    . . . . . . f f f f . . . . . . 
-    . . . . f f f 2 2 f f f . . . . 
-    . . . f f f 2 2 2 2 f f f . . . 
-    . . f f f e e e e e e f f f . . 
-    . . f f e 2 2 2 2 2 2 e e f . . 
-    . . f e 2 f f f f f f 2 e f . . 
-    . . f f f f e e e e f f f f . . 
-    . f f e f b f 4 4 f b f e f f . 
-    . f e e 4 1 f d d f 1 4 e e f . 
-    . . f e e d d d d d d e e f . . 
-    . . . f e e 4 4 4 4 e e f . . . 
-    . . e 4 f 2 2 2 2 2 2 f 4 e . . 
-    . . 4 d f 2 2 2 2 2 2 f d 4 . . 
-    . . 4 4 f 4 4 5 5 4 4 f 4 4 . . 
+    . . . . . . . . . . . . . . . . 
     . . . . . f f f f f f . . . . . 
-    . . . . . f f . . f f . . . . . 
+    . . . . f e e e e e e f . . . . 
+    . . . f e e e e e e e e f . . . 
+    . . . f e e f f f f e e f . . . 
+    . . . f e f f d d f f e f . . . 
+    . . f e f d e d d e d f e f . . 
+    . . f e f d d d d d d f e f . . 
+    . . f e e f d 3 3 d f e e f . . 
+    . f e e f 9 f f f f 9 f e e f . 
+    . . f f d 9 9 9 9 9 9 d f f . . 
+    . . f d d f 9 9 9 9 f d d f . . 
+    . . . f f 9 9 9 9 9 9 f f . . . 
+    . . . f 9 9 9 9 9 9 9 9 f . . . 
+    . . . f f f f f f f f f f . . . 
+    . . . . 9 f f . . f f 9 . . . . 
     `, SpriteKind.Player)
 tiles.placeOnTile(mySprite, tiles.getTileLocation(38, 18))
 controller.moveSprite(mySprite)
