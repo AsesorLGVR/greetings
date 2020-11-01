@@ -44,6 +44,99 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile3, function (sprite, location
         tiles.placeOnTile(mySprite, tiles.getTileLocation(45, 18))
     }
 })
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    animation.runImageAnimation(
+    mySprite,
+    [img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . f f f f f f . . . . . 
+        . . . . f e e e e e e f . . . . 
+        . . . f e e e e e e e e f . . . 
+        . . . f e e e e e e e e f . . . 
+        . . . f e e e e e e e e f . . . 
+        . . f e e e e e e e e e e f . . 
+        . . f e e e e e e e e e e f . . 
+        . . f e e e e e e e e e e f . . 
+        . f e e f 9 f f f f 9 f e e f . 
+        . . f f d 9 9 9 9 9 9 d f f . . 
+        . . f d d f 9 9 9 9 f d d f . . 
+        . . . f f 9 9 9 9 9 9 f f . . . 
+        . . . f 9 9 9 9 9 9 9 9 f . . . 
+        . . . f f f f f f f f f f . . . 
+        . . . . 9 f f . . f f 9 . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . f f f f f f . . . . . 
+        . . . . f e e e e e e f . . . . 
+        . . . f e e e e e e e e f . . . 
+        . . . f e e e e e e e e f . . . 
+        . . . f e e e e e e e e f . . . 
+        . . f e e e e e e e e e e f . . 
+        . . f e e e e e e e e e e f . . 
+        . . f e e e e e e e e e e f . . 
+        . f e e f 9 f f f f 9 f e e f . 
+        . . f d d 9 9 9 9 9 9 f f f . . 
+        . . f d d f 9 9 9 9 f f f f . . 
+        . . . f f 9 9 9 9 9 9 f f . . . 
+        . . . f 9 9 9 9 9 9 9 9 f . . . 
+        . . . f f f f f f f f f f . . . 
+        . . . . . . . . . f f 9 . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . f f f f f f . . . . . 
+        . . . . f e e e e e e f . . . . 
+        . . . f e e e e e e e e f . . . 
+        . . . f e e e e e e e e f . . . 
+        . . . f e e e e e e e e f . . . 
+        . . f e e e e e e e e e e f . . 
+        . . f e e e e e e e e e e f . . 
+        . . f e e e e e e e e e e f . . 
+        . f e e f 9 f f f f 9 f e e f . 
+        . . f f d 9 9 9 9 9 9 d f f . . 
+        . . f d d f 9 9 9 9 f d d f . . 
+        . . . f f 9 9 9 9 9 9 f f . . . 
+        . . . f 9 9 9 9 9 9 9 9 f . . . 
+        . . . f f f f f f f f f f . . . 
+        . . . . 9 f f . . f f 9 . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . f f f f f f . . . . . 
+        . . . . f e e e e e e f . . . . 
+        . . . f e e e e e e e e f . . . 
+        . . . f e e e e e e e e f . . . 
+        . . . f e e e e e e e e f . . . 
+        . . f e e e e e e e e e e f . . 
+        . . f e e e e e e e e e e f . . 
+        . . f e e e e e e e e e e f . . 
+        . f e e f 9 f f f f 9 f e e f . 
+        . . f f f 9 9 9 9 9 9 d d f . . 
+        . . f f f f 9 9 9 9 f d d f . . 
+        . . . f f 9 9 9 9 9 9 f f . . . 
+        . . . f 9 9 9 9 9 9 9 9 f . . . 
+        . . . f f f f f f f f f . . . . 
+        . . . . 9 f f . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . f f f f f f . . . . . 
+        . . . . f e e e e e e f . . . . 
+        . . . f e e e e e e e e f . . . 
+        . . . f e e e e e e e e f . . . 
+        . . . f e e e e e e e e f . . . 
+        . . f e e e e e e e e e e f . . 
+        . . f e e e e e e e e e e f . . 
+        . . f e e e e e e e e e e f . . 
+        . f e e f 9 f f f f 9 f e e f . 
+        . . f f d 9 9 9 9 9 9 d f f . . 
+        . . f d d f 9 9 9 9 f d d f . . 
+        . . . f f 9 9 9 9 9 9 f f . . . 
+        . . . f 9 9 9 9 9 9 9 9 f . . . 
+        . . . f f f f f f f f f f . . . 
+        . . . . 9 f f . . f f 9 . . . . 
+        `],
+    200,
+    true
+    )
+})
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile22, function (sprite, location) {
     if (true) {
         game.setDialogFrame(img`
@@ -124,6 +217,82 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile8, function (sprite, location
         tiles.setTileAt(location, sprites.builtin.coin1)
     }
 })
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    animation.runImageAnimation(
+    mySprite,
+    [img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . f f f f f . . . . . . 
+        . . . . f e e e e e f . . . . . 
+        . . . f e e e e e e e f . . . . 
+        . . . f e e e e e e e f . . . . 
+        . . . f d f d e e e e f . . . . 
+        . . . f d f d e e e e f f . . . 
+        . . . f d d d d e e e f e f . . 
+        . . . . 3 d d d f f e f f . . . 
+        . . . . . f f 9 9 f e e e f . . 
+        . . . . f 9 9 9 f f f f f . . . 
+        . . . . f 9 9 f d f . . . . . . 
+        . . . . . f 9 f d f . . . . . . 
+        . . . . f 9 9 9 f d f . . . . . 
+        . . . . f f 9 9 f f . . . . . . 
+        . . . . . . f f f . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . f f f f f . . . . . 
+        . . . . . f e e e e e f . . . . 
+        . . . . f e e e e e e e f . . . 
+        . . . . f e e e e e e e f . . . 
+        . . . . f d f d e e e e f . . . 
+        . . . . f d f d e e e e f f . . 
+        . . . . f d d d d e e e f e f . 
+        . . . . . 3 d d d f f e f f . . 
+        . . . . . . f f 9 9 f f e e f . 
+        . . . . . f d d d d f f f f . . 
+        . . . . . f d d d f 9 f . . . . 
+        . . . . . . f f f d 9 9 f . . . 
+        . . . . . f f f 9 9 f f . . . . 
+        . . . . . f f f f f f f . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . f f f f f . . . . . . 
+        . . . . f e e e e e f . . . . . 
+        . . . f e e e e e e e f . . . . 
+        . . . f e e e e e e e f . . . . 
+        . . . f d f d e e e e f . . . . 
+        . . . f d f d e e e e f f . . . 
+        . . . f d d d d e e e f e f . . 
+        . . . . 3 d d d f f e f f . . . 
+        . . . . . f f 9 9 f e e e f . . 
+        . . . . f 9 9 9 f f f f f . . . 
+        . . . . f 9 9 f d f . . . . . . 
+        . . . . . f 9 f d f . . . . . . 
+        . . . . f 9 9 9 f d f . . . . . 
+        . . . . f f 9 9 f f . . . . . . 
+        . . . . . . f f f . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . f f f f f . . . . . 
+        . . . . . f e e e e e f . . . . 
+        . . . . f e e e e e e e f . . . 
+        . . . . f e e e e e e e f . . . 
+        . . . . f d f d e e e e f . . . 
+        . . . . f d f d e e e e f f . . 
+        . . . . f d d d d e e e f e f . 
+        . . . . . 3 d d d f f e f f . . 
+        . . . . . . f f 9 9 f f e e f . 
+        . . . . . f 9 9 9 d d f f f . . 
+        . . . . . f 9 9 9 f d d f . . . 
+        . . . . . . f 9 9 f f f . . . . 
+        . . . . . f 9 9 9 9 f . . . . . 
+        . . . . . . f f f f f . . . . . 
+        `],
+    200,
+    true
+    )
+})
 scene.onOverlapTile(SpriteKind.Player, sprites.builtin.villager4WalkBack1, function (sprite, location) {
     if (true) {
         game.splash("¡Siéntese, por favor!")
@@ -171,6 +340,82 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile12, function (sprite, locatio
         tiles.placeOnTile(mySprite, tiles.getTileLocation(12, 15))
         tiles.setWallAt(tiles.getTileLocation(12, 16), true)
     }
+})
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+    animation.runImageAnimation(
+    mySprite,
+    [img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . f f f f f . . . . . . 
+        . . . . f e e e e e f . . . . . 
+        . . . f e e e e e e e f . . . . 
+        . . . f e e e e e e e f . . . . 
+        . . . f e e e e d f d f . . . . 
+        . . f f e e e e d f d f . . . . 
+        . f e f e e e d d d d f . . . . 
+        . . f f e e d d d d 3 . . . . . 
+        . f f e e 9 9 9 f f . . . . . . 
+        . . f f f 9 9 9 9 9 f . . . . . 
+        . . . . f d 9 f 9 9 f . . . . . 
+        . . . . f d 9 f 9 9 . . . . . . 
+        . . . f d f 9 9 f 9 f . . . . . 
+        . . . f f f 9 9 f f f . . . . . 
+        . . . . . . f f f . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . f f f f f . . . . . 
+        . . . . . f e e e e e f . . . . 
+        . . . . f e e e e e e e f . . . 
+        . . . . f e e e e e e e f . . . 
+        . . . . f e e e e d f d f . . . 
+        . . . f f e e e e d f d f . . . 
+        . . f e f e e e d d d d f . . . 
+        . . . f f e e d d d d 3 . . . . 
+        . . f f e e 9 9 9 f f . . . . . 
+        . . . f f f 9 d d d d f . . . . 
+        . . . . . f 9 f d d d f . . . . 
+        . . . . . f 9 d 9 9 9 . . . . . 
+        . . . . f f f 9 9 f f f . . . . 
+        . . . . f f f 9 9 f f f . . . . 
+        . . . . f f f f f f f f . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . f f f f f . . . . . . 
+        . . . . f e e e e e f . . . . . 
+        . . . f e e e e e e e f . . . . 
+        . . . f e e e e e e e f . . . . 
+        . . . f e e e e d f d f . . . . 
+        . . f f e e e e d f d f . . . . 
+        . f e f e e e d d d d f . . . . 
+        . . f f e e d d d d 3 . . . . . 
+        . f e e e 9 9 9 f f . . . . . . 
+        . . f f f 9 9 9 9 9 f . . . . . 
+        . f f f f d d 9 9 9 f . . . . . 
+        . . . f d d f 9 9 9 . . . . . . 
+        . . . . f f f 9 9 f . . . . . . 
+        . . . . . f 9 9 9 9 f . . . . . 
+        . . . . . f f f f f . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . f f f f f . . . . . 
+        . . . . . f e e e e e f . . . . 
+        . . . . f e e e e e e e f . . . 
+        . . . . f e e e e e e e f . . . 
+        . . . . f e e e e d f d f . . . 
+        . . . f f e e e e d f d f . . . 
+        . . f e f e e e d d d d f . . . 
+        . . . f f e e d d d d 3 . . . . 
+        . . f f e e 9 9 9 f f . . . . . 
+        . . . f f f 9 d d d d f . . . . 
+        . . . . . f 9 f d d d f . . . . 
+        . . . . . f 9 d 9 9 9 . . . . . 
+        . . . . f f f 9 9 f f f . . . . 
+        . . . . f f f 9 9 f f f . . . . 
+        . . . . f f f f f f f f . . . . 
+        `],
+    200,
+    true
+    )
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile21, function (sprite, location) {
     if (true) {
@@ -223,9 +468,77 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
         . . . f 9 9 9 9 9 9 9 9 f . . . 
         . . . f f f f f f f f f f . . . 
         . . . . 9 f f . . f f 9 . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . f f f f f f . . . . . 
+        . . . . f e e e e e e f . . . . 
+        . . . f e e e e e e e e f . . . 
+        . . . f e e f f f f e e f . . . 
+        . . . f e f f d d f f e f . . . 
+        . . f e f d e d d e d f e f . . 
+        . . f e f d d d d d d f e f . . 
+        . . f e e f d 3 3 d f e e f . . 
+        . f e e f 9 f f f f 9 f e e f . 
+        . . f f d 9 9 9 9 9 9 d f f . . 
+        . . f f d f 9 9 9 9 f f d f . . 
+        . . . f d 9 9 9 9 9 9 f f . . . 
+        . . . f 9 9 9 9 9 9 9 9 f . . . 
+        . . . f f f f f f f f f f . . . 
+        . . . . . . . . . f f 9 . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . f f f f f f . . . . . 
+        . . . . f e e e e e e f . . . . 
+        . . . f e e e e e e e e f . . . 
+        . . . f e e f f f f e e f . . . 
+        . . . f e f f d d f f e f . . . 
+        . . f e f d e d d e d f e f . . 
+        . . f e f d d d d d d f e f . . 
+        . . f e e f d 3 3 d f e e f . . 
+        . f e e f 9 f f f f 9 f e e f . 
+        . . f f d 9 9 9 9 9 9 d f f . . 
+        . . f d d f 9 9 9 9 f d d f . . 
+        . . . f f 9 9 9 9 9 9 f f . . . 
+        . . . f 9 9 9 9 9 9 9 9 f . . . 
+        . . . f f f f f f f f f f . . . 
+        . . . . 9 f f . . f f 9 . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . f f f f f f . . . . . 
+        . . . . f e e e e e e f . . . . 
+        . . . f e e e e e e e e f . . . 
+        . . . f e e f f f f e e f . . . 
+        . . . f e f f d d f f e f . . . 
+        . . f e f d e d d e d f e f . . 
+        . . f e f d d d d d d f e f . . 
+        . . f e e f d 3 3 d f e e f . . 
+        . f e e f 9 f f f f 9 f e e f . 
+        . . f f d 9 9 9 9 9 9 d f f . . 
+        . . f d f f 9 9 9 9 f d f f . . 
+        . . . f f 9 9 9 9 9 9 f f . . . 
+        . . . f 9 9 9 9 9 9 9 9 f . . . 
+        . . . f f f f f f f f f f . . . 
+        . . . . 9 f f . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . f f f f f f . . . . . 
+        . . . . f e e e e e e f . . . . 
+        . . . f e e e e e e e e f . . . 
+        . . . f e e f f f f e e f . . . 
+        . . . f e f f d d f f e f . . . 
+        . . f e f d e d d e d f e f . . 
+        . . f e f d d d d d d f e f . . 
+        . . f e e f d 3 3 d f e e f . . 
+        . f e e f 9 f f f f 9 f e e f . 
+        . . f f d 9 9 9 9 9 9 d f f . . 
+        . . f d d f 9 9 9 9 f d d f . . 
+        . . . f f 9 9 9 9 9 9 f f . . . 
+        . . . f 9 9 9 9 9 9 9 9 f . . . 
+        . . . f f f f f f f f f f . . . 
+        . . . . 9 f f . . f f 9 . . . . 
         `],
-    500,
-    false
+    200,
+    true
     )
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile20, function (sprite, location) {
@@ -272,6 +585,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile1, function (sprite, location
         tiles.placeOnTile(mySprite, tiles.getTileLocation(7, 6))
     }
 })
+let movimiento = false
 let mySprite: Sprite = null
 tiles.setTilemap(tilemap`level`)
 info.setLife(3)
@@ -315,3 +629,9 @@ let mySprite2 = sprites.create(img`
     `, SpriteKind.Enemy)
 mySprite2.follow(mySprite, 100)
 tiles.placeOnTile(mySprite2, tiles.getTileLocation(1, 19))
+game.onUpdate(function () {
+    movimiento = controller.down.isPressed() || (controller.up.isPressed() || (controller.left.isPressed() || controller.right.isPressed()))
+    if (!(movimiento)) {
+        animation.stopAnimation(animation.AnimationTypes.All, mySprite)
+    }
+})
