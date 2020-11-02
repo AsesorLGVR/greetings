@@ -1,4 +1,3 @@
-let text_list: string[] = []
 let list2: Sprite[] = []
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location) {
     if (info.score() >= 1 && game.askForString("¿Contraseña? means password", 6) == "MALAGA") {
@@ -1168,8 +1167,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     scene.cameraShake(4, 1000)
 })
 let movimiento = false
+let sprite_list2: Sprite[] = []
 let mySprite: Sprite = null
-let sprite_list2 = ["s.vsd", "sdvsdvdvsvd", "dvsdv", "vsdvsdv"]
+let text_list = ["s.vsd", "sdvsdvdvsvd", "dvsdv", "vsdvsdv"]
 effects.starField.startScreenEffect()
 for (let value of text_list) {
     show_text2(value)
@@ -1223,8 +1223,6 @@ game.onUpdate(function () {
             value.ay = 500
         }
     }
-})
-game.onUpdate(function () {
     movimiento = controller.down.isPressed() || (controller.up.isPressed() || (controller.left.isPressed() || controller.right.isPressed()))
     if (!(movimiento)) {
         animation.stopAnimation(animation.AnimationTypes.All, mySprite)
