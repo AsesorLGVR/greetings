@@ -4,7 +4,8 @@
     "dependencies": {
         "device": "*",
         "storyboard": "*",
-        "animation": "*"
+        "animation": "*",
+        "El verbo ser": "github:asesorlgvr/ser#master"
     },
     "files": [
         "main.blocks",

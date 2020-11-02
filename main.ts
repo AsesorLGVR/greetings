@@ -1,3 +1,5 @@
+let text_list: string[] = []
+let list2: Sprite[] = []
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location) {
     if (info.score() >= 1 && game.askForString("¿Contraseña? means password", 6) == "MALAGA") {
         info.setScore(-1)
@@ -10,6 +12,14 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location
         tiles.placeOnTile(mySprite, tiles.getTileLocation(11, 4))
     }
 })
+function show_text2 (message: string) {
+    mySprite = sprites.create(image.create(160, 20), SpriteKind.Player)
+    images.printText(mySprite.image, message, 0)
+    mySprite.ay = -20
+    mySprite.y = 130
+    mySprite.lifespan = 6000
+    pause(2000)
+}
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile30, function (sprite, location) {
     if (true) {
         game.setDialogFrame(img`
@@ -1159,6 +1169,11 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 let movimiento = false
 let mySprite: Sprite = null
+let sprite_list2 = ["s.vsd", "sdvsdvdvsvd", "dvsdv", "vsdvsdv"]
+effects.starField.startScreenEffect()
+for (let value of text_list) {
+    show_text2(value)
+}
 tiles.setTilemap(tilemap`level`)
 info.setLife(3)
 info.setScore(0)
@@ -1201,6 +1216,14 @@ let mySprite2 = sprites.create(img`
     `, SpriteKind.Enemy)
 mySprite2.follow(mySprite, 100)
 tiles.placeOnTile(mySprite2, tiles.getTileLocation(1, 19))
+game.onUpdate(function () {
+    sprite_list2 = sprites.allOfKind(SpriteKind.Player)
+    for (let value of list2) {
+        if (value.y >= 60) {
+            value.ay = 500
+        }
+    }
+})
 game.onUpdate(function () {
     movimiento = controller.down.isPressed() || (controller.up.isPressed() || (controller.left.isPressed() || controller.right.isPressed()))
     if (!(movimiento)) {
