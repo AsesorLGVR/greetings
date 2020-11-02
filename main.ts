@@ -1,12 +1,12 @@
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location) {
-    if (true) {
-        info.setScore(3)
+    if (info.score() == 1 && game.askForString("¿Contraseña? means password", 10) == "CONTRASEÑA") {
+        info.setScore(-1)
         game.setDialogFrame(sprites.builtin.computer0)
-        game.showLongText("Tiene todos sus documentos en regla. Puede pasar", DialogLayout.Bottom)
-        tiles.placeOnTile(mySprite, tiles.getTileLocation(7, 12))
+        game.showLongText("Tiene todos sus documentos en regla. Puede pasar", DialogLayout.Full)
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(5, 6))
     } else {
         game.setDialogFrame(sprites.builtin.computer0)
-        game.showLongText("Lo siento. Necesita tener todos sus documentos en regla. Necesita pasaporte, visa y billete de vuelo. ", DialogLayout.Bottom)
+        game.showLongText("Lo siento. Necesita tener todos sus documentos en regla. Necesita pasaporte, visa y billete de vuelo. ", DialogLayout.Full)
         tiles.setWallAt(location, true)
     }
 })
@@ -62,15 +62,15 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile30, function (sprite, locatio
             867788.8768..86768..8678768..86768..8678..887768
             8888...888....888....88.88....888....88.....8888
             `)
-        game.showLongText("Todo lo que toco se convierte en oro\" means To have the Midas touch", DialogLayout.Full)
-        info.changeScoreBy(1)
+        game.showLongText("Estoy forrada\" means to be rich", DialogLayout.Full)
+        info.changeScoreBy(3)
         music.baDing.play()
         tiles.setTileAt(location, sprites.castle.tileGrass1)
-        tiles.placeOnTile(mySprite, tiles.getTileLocation(36, 18))
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(46, 2))
     }
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile3, function (sprite, location) {
-    if (info.score() == 0) {
+    if (game.askForString("¿2 billetes de Málaga a Barcelona?", 2) == "si") {
         game.setDialogFrame(img`
             .....cccccccccccccc.....
             ...cbd111111111111dbc...
@@ -97,9 +97,38 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile3, function (sprite, location
             .b11bcccccccccccccc.....
             ccccc...................
             `)
-        game.showLongText("Buenos días, aquí tiene sus 2 billetes de vuelo.", DialogLayout.Bottom)
-        tiles.setWallAt(tiles.getTileLocation(48, 17), false)
+        game.showLongText("Pase por caja y recoja sus billetes", DialogLayout.Bottom)
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(47, 18))
         tiles.setWallAt(tiles.getTileLocation(48, 18), false)
+        tiles.setWallAt(tiles.getTileLocation(48, 17), false)
+    } else {
+        game.setDialogFrame(img`
+            .....cccccccccccccc.....
+            ...cbd111111111111dbc...
+            ..cd1111111111111111dc..
+            .cd111111111111111111dc.
+            .b11111111111111111111b.
+            cd11111111111111111111dc
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            cd11111111111111111111dc
+            .b11111111111111111111b.
+            .cd111111111111111111dc.
+            ..cd1111111111111111dc..
+            ..b11d111111111111dbc...
+            .b11bcccccccccccccc.....
+            ccccc...................
+            `)
+        game.showLongText("Fuera de aquí tiesa! Trabaja!", DialogLayout.Full)
         tiles.placeOnTile(mySprite, tiles.getTileLocation(45, 18))
     }
 })
@@ -307,7 +336,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile23, function (sprite, locatio
             867788.8768..86768..8678768..86768..8678..887768
             8888...888....888....88.88....888....88.....8888
             `)
-        game.showLongText("Todo lo que toco se convierte en oro\" means To have the Midas touch", DialogLayout.Full)
+        game.showLongText("\"Todo lo que toco se convierte en oro\" means To have the Midas touch", DialogLayout.Full)
         info.changeScoreBy(2)
         music.baDing.play()
         tiles.setTileAt(location, sprites.castle.tileGrass1)
@@ -315,28 +344,64 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile23, function (sprite, locatio
     }
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile4, function (sprite, location) {
-    if (info.score() == 10 && game.askForString("¿Ya tiene su pasaporte y ha comprado el billete?") == "si") {
-        game.splash("Pago en efectivo. Gracias por todo. Buen día!")
+    if (info.score() >= 10 && game.askForString("¿Ya tiene su pasaporte y ha comprado el billete?", 2) == "si") {
+        game.setDialogFrame(img`
+            .....cccccccccccccc.....
+            ...cbd111111111111dbc...
+            ..cd1111111111111111dc..
+            .cd111111111111111111dc.
+            .b11111111111111111111b.
+            cd11111111111111111111dc
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            cd11111111111111111111dc
+            .b11111111111111111111b.
+            .cd111111111111111111dc.
+            ..cd1111111111111111dc..
+            ..b11d111111111111dbc...
+            .b11bcccccccccccccc.....
+            ccccc...................
+            `)
+        game.showLongText("Perfecto. Su contraseña es CONTRASEÑA", DialogLayout.Full)
         tiles.setTileAt(location, sprites.dungeon.floorDark2)
+        info.changeScoreBy(-10)
     } else {
         game.setDialogFrame(img`
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
+            .....cccccccccccccc.....
+            ...cbd111111111111dbc...
+            ..cd1111111111111111dc..
+            .cd111111111111111111dc.
+            .b11111111111111111111b.
+            cd11111111111111111111dc
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            cd11111111111111111111dc
+            .b11111111111111111111b.
+            .cd111111111111111111dc.
+            ..cd1111111111111111dc..
+            ..b11d111111111111dbc...
+            .b11bcccccccccccccc.....
+            ccccc...................
             `)
-        game.showLongText("Lo siento, necesita pasaporte, billete de vuelo y aval(10 monedas de oro)", DialogLayout.Bottom)
+        game.showLongText("Lo siento, necesita pasaporte, billete de vuelo y aval(10 monedas de oro)", DialogLayout.Full)
         tiles.placeOnTile(mySprite, tiles.getTileLocation(6, 19))
     }
 })
@@ -395,10 +460,8 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.greenSwitchUp, function (
             867788.8768..86768..8678768..86768..8678..887768
             8888...888....888....88.88....888....88.....8888
             `)
-        game.showLongText("LA curiosidad mató al gato y ahora te va a matar a ti. Has liberado un lince ibérico que te está buscando", DialogLayout.Bottom)
-        tiles.setWallAt(tiles.getTileLocation(1, 19), false)
-    } else {
-        tiles.setWallAt(tiles.getTileLocation(1, 19), true)
+        game.showLongText("LA curiosidad mató al gato y ahora te va a matar a ti. Has liberado un lince ibérico que te está buscando", DialogLayout.Full)
+        tiles.setWallAt(tiles.getTileLocation(3, 19), false)
     }
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.transparency16, function (sprite, location) {
@@ -408,32 +471,68 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.transparency16, function (sprite,
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile15, function (sprite, location) {
     game.setDialogFrame(sprites.builtin.computer0)
-    game.showLongText("Detengase! Usted no puede estar aquí. Solo personal autorizado. Salga de aquí inmediatamente o le pondré una multa.", DialogLayout.Bottom)
-    tiles.placeOnTile(mySprite, tiles.getTileLocation(9, 12))
+    game.showLongText("Detengase! Usted no puede estar aquí. Solo personal autorizado. Salga de aquí inmediatamente o le pondré una multa.", DialogLayout.Full)
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(5, 6))
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile8, function (sprite, location) {
-    if (info.score() == 10) {
-        game.splash("Pago en efectivo. Gracias por todo. Buen día!")
+    if (info.score() >= 1) {
+        game.setDialogFrame(img`
+            .....cccccccccccccc.....
+            ...cbd111111111111dbc...
+            ..cd1111111111111111dc..
+            .cd111111111111111111dc.
+            .b11111111111111111111b.
+            cd11111111111111111111dc
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            cd11111111111111111111dc
+            .b11111111111111111111b.
+            .cd111111111111111111dc.
+            ..cd1111111111111111dc..
+            ..b11d111111111111dbc...
+            .b11bcccccccccccccc.....
+            ccccc...................
+            `)
+        game.showLongText("Pago en efectivo. Gracias por todo. Buen día!", DialogLayout.Full)
+        info.changeScoreBy(-1)
         tiles.setTileAt(location, sprites.dungeon.floorDark2)
     } else {
         game.setDialogFrame(img`
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . 
+            .....cccccccccccccc.....
+            ...cbd111111111111dbc...
+            ..cd1111111111111111dc..
+            .cd111111111111111111dc.
+            .b11111111111111111111b.
+            cd11111111111111111111dc
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            c1111111111111111111111c
+            cd11111111111111111111dc
+            .b11111111111111111111b.
+            .cd111111111111111111dc.
+            ..cd1111111111111111dc..
+            ..b11d111111111111dbc...
+            .b11bcccccccccccccc.....
+            ccccc...................
             `)
-        game.showLongText("Fuera de aquí tiesa. Necesitas 5 monedas de oro", DialogLayout.Bottom)
+        game.showLongText("Fuera de aquí tiesa. Necesitas 5 monedas de oro", DialogLayout.Full)
         tiles.placeOnTile(mySprite, tiles.getTileLocation(48, 15))
     }
 })
@@ -489,11 +588,11 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile31, function (sprite, locatio
             867788.8768..86768..8678768..86768..8678..887768
             8888...888....888....88.88....888....88.....8888
             `)
-        game.showLongText("Todo lo que toco se convierte en oro\" means To have the Midas touch", DialogLayout.Full)
-        info.changeScoreBy(1)
+        game.showLongText("EL tiempo es oro means time is money", DialogLayout.Full)
+        info.changeScoreBy(3)
         music.baDing.play()
         tiles.setTileAt(location, sprites.castle.tileGrass1)
-        tiles.placeOnTile(mySprite, tiles.getTileLocation(36, 18))
+        tiles.placeOnTile(mySprite, tiles.getTileLocation(42, 12))
     }
 })
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -572,6 +671,10 @@ controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     true
     )
 })
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairWest, function (sprite, location) {
+    game.over(true, effects.smiles)
+    game.showLongText("Gqnaste el juego y seguro aprendiste algo de español. Eres la leche!", DialogLayout.Bottom)
+})
 scene.onOverlapTile(SpriteKind.Player, sprites.builtin.villager4WalkBack1, function (sprite, location) {
     if (true) {
         game.splash("¡Siéntese, por favor!")
@@ -630,7 +733,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile19, function (sprite, locatio
             867788.8768..86768..8678768..86768..8678..887768
             8888...888....888....88.88....888....88.....8888
             `)
-        game.showLongText("ACepto soborno\" means To receive a kickback ", DialogLayout.Full)
+        game.showLongText("\"Acepto sobornos\" means To receive a kickback ", DialogLayout.Full)
         info.changeScoreBy(2)
         music.baDing.play()
         tiles.setTileAt(location, sprites.dungeon.floorDark1)
@@ -642,6 +745,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile9, function (sprite, location
         music.baDing.play()
         tiles.setTileAt(location, sprites.dungeon.floorDark2)
         game.showLongText("Aquí tiene su pasaporte. Ahora puede ir a pedir su visa", DialogLayout.Full)
+        info.changeScoreBy(-2)
     } else {
         game.showLongText("Aquí no regalamos los pasaportes.", DialogLayout.Full)
         tiles.placeOnTile(mySprite, tiles.getTileLocation(13, 4))
@@ -649,12 +753,12 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile9, function (sprite, location
 })
 // Guardia civil
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile12, function (sprite, location) {
-    if (game.askForString("Buenas tardes! ¿qué necesita visa o pasaporte?", 9) == "visa") {
+    if (game.askForString("Buenas tardes! ¿qué necesita visa o pasaporte?", 4) == "visa") {
         tiles.placeOnTile(mySprite, tiles.getTileLocation(12, 15))
         tiles.setWallAt(tiles.getTileLocation(12, 16), false)
     } else {
         game.setDialogFrame(sprites.builtin.computer0)
-        game.showLongText("Aquí es la oficina de Visas tiene que ir a la de pasaportes. Adiós! SIGUIENTE!", DialogLayout.Bottom)
+        game.showLongText("Aquí es la oficina de Visas tiene que ir a la de pasaportes. Adiós! SIGUIENTE!", DialogLayout.Full)
         tiles.placeOnTile(mySprite, tiles.getTileLocation(12, 15))
         tiles.setWallAt(tiles.getTileLocation(12, 16), true)
     }
@@ -787,18 +891,11 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile21, function (sprite, locatio
             867788.8768..86768..8678768..86768..8678..887768
             8888...888....888....88.88....888....88.....8888
             `)
-        game.showLongText("Con esto ya he cubierto los gastos\" means To break even", DialogLayout.Full)
+        game.showLongText("\"Con esto ya he cubierto los gastos\" means To break even", DialogLayout.Full)
         info.changeScoreBy(2)
         music.baDing.play()
         tiles.setTileAt(location, sprites.castle.tileGrass1)
         tiles.placeOnTile(mySprite, tiles.getTileLocation(30, 9))
-    }
-})
-// Misión terminadaw
-scene.onOverlapTile(SpriteKind.Player, sprites.builtin.coral0, function (sprite, location) {
-    if (true) {
-        tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 8))
-        tiles.setTilemap(tilemap`level_2`)
     }
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -946,15 +1043,19 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile20, function (sprite, locatio
             867788.8768..86768..8678768..86768..8678..887768
             8888...888....888....88.88....888....88.....8888
             `)
-        game.showLongText("He nacido con una paz debajo del brazo\" means to be born with a silver spoon in one'mouth.", DialogLayout.Full)
+        game.showLongText("He nacido con un pan debajo del brazo\" means to be born with a silver spoon in one'mouth.", DialogLayout.Full)
         info.changeScoreBy(2)
         music.baDing.play()
         tiles.setTileAt(location, sprites.vehicle.roadVertical)
         tiles.placeOnTile(mySprite, tiles.getTileLocation(26, 3))
     }
 })
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.floorDark2, function (sprite, location) {
+    tiles.setTileAt(tiles.getTileLocation(44, 18), sprites.builtin.villager4WalkBack1)
+    tiles.setTileAt(tiles.getTileLocation(44, 17), sprites.builtin.computer1)
+})
 // Conversación final
-scene.onOverlapTile(SpriteKind.Player, myTiles.tile1, function (sprite, location) {
+scene.onOverlapTile(SpriteKind.Player, myTiles.tile13, function (sprite, location) {
     if (game.askForString("Buenos días", 11) == "buenos dias") {
         if (game.askForString("¿qué tal?", 9) == "bien y tu") {
             tiles.placeOnTile(mySprite, tiles.getTileLocation(7, 6))
@@ -973,9 +1074,9 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile1, function (sprite, location
         tiles.placeOnTile(mySprite, tiles.getTileLocation(7, 6))
     }
 })
-scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.floorDark2, function (sprite, location) {
-    tiles.setTileAt(tiles.getTileLocation(44, 18), sprites.builtin.villager4WalkBack1)
-    tiles.setTileAt(tiles.getTileLocation(44, 17), sprites.builtin.computer1)
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    mySprite.destroy(effects.disintegrate, 500)
+    game.over(false)
 })
 let movimiento = false
 let mySprite: Sprite = null
