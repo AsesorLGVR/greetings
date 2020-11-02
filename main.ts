@@ -1,12 +1,12 @@
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile2, function (sprite, location) {
-    if (info.score() >= 1 && game.askForString("¿Contraseña? means password", 10) == "MALAGA") {
+    if (info.score() >= 1 && game.askForString("¿Contraseña? means password", 6) == "MALAGA") {
         info.setScore(-1)
         game.setDialogFrame(sprites.builtin.computer0)
-        game.showLongText("Tiene todos sus documentos en regla. Puede pasar", DialogLayout.Full)
+        game.showLongText("Tiene todos sus documentos en regla. Puede pasar. ¡Buen viaje!", DialogLayout.Full)
         tiles.placeOnTile(mySprite, tiles.getTileLocation(5, 6))
     } else {
         game.setDialogFrame(sprites.builtin.computer0)
-        game.showLongText("Lo siento. Necesita tener todos sus documentos en regla. Necesita pasaporte, visa y billete de vuelo. ", DialogLayout.Full)
+        game.showLongText("Lo siento. Necesita tener todos sus documentos en regla. Necesita pasaporte, visa, contraseña y billete de vuelo. ", DialogLayout.Full)
         tiles.placeOnTile(mySprite, tiles.getTileLocation(11, 4))
     }
 })
@@ -1155,6 +1155,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile13, function (sprite, locatio
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     mySprite.destroy(effects.disintegrate, 500)
     game.over(false)
+    scene.cameraShake(4, 1000)
 })
 let movimiento = false
 let mySprite: Sprite = null
